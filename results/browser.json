@@ -1,0 +1,55 @@
+{
+  "browser": "140.0.7339.16",
+  "workflow": "real Twemoji collection; create, verify, reload, damage, inspect, explicit repair, download every file, independent byte/hash comparison, reopen SVGs, HTML/JSON report, insufficient and damaged recovery, import, mobile layout",
+  "files": [
+    {
+      "name": "1f308.svg",
+      "sha256": "555858f907bda45e059201a8a3d8910876ef8d830b9b82cfc0ca9aa55c7b029a",
+      "byte_equal": true,
+      "reopened_svg": true
+    },
+    {
+      "name": "1f30d.svg",
+      "sha256": "593d59f9f319875b02111ac46a9f70df2c1e0f3a5fd92810c3f5ddbb598ca62c",
+      "byte_equal": true,
+      "reopened_svg": true
+    },
+    {
+      "name": "1f333.svg",
+      "sha256": "28b0601f687f84e5fd61d3bd9637d30db7c280967a4518e85bba9f4b24671f57",
+      "byte_equal": true,
+      "reopened_svg": true
+    },
+    {
+      "name": "1f419.svg",
+      "sha256": "92d125d9c4c2d7e7d8ff450d0fb1cd80c089804fa06663cf1e12ac29ed173c54",
+      "byte_equal": true,
+      "reopened_svg": true
+    },
+    {
+      "name": "1f4be.svg",
+      "sha256": "7a3a98d89e9998390f1192625541d6528ed7119b96fc14ceb4db88f942f45ead",
+      "byte_equal": true,
+      "reopened_svg": true
+    },
+    {
+      "name": "1f600.svg",
+      "sha256": "41478e547c5b6ad66bfcf91ead5350fa0bc247956c3ff912020327e3e9ad0d2b",
+      "byte_equal": true,
+      "reopened_svg": true
+    },
+    {
+      "name": "1f680.svg",
+      "sha256": "3892ef66f49ce43d49c8719e9277da0e0e821059f0cc239a549f6629cc12b3cf",
+      "byte_equal": true,
+      "reopened_svg": true
+    },
+    {
+      "name": "1f984.svg",
+      "sha256": "6063b1ca7021881784eb5a8110997357026fb7376785e639850335a9c422a639",
+      "byte_equal": true,
+      "reopened_svg": true
+    }
+  ],
+  "passed": true
+}

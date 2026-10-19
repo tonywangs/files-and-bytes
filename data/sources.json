@@ -1,0 +1,64 @@
+{
+  "collection": "Twemoji artwork subset",
+  "revision": "7a3dad4a4da30497093dab22eafba135f02308e1",
+  "release": "v14.0.2",
+  "license": "CC-BY-4.0",
+  "attribution": "Copyright Twitter, Inc and other contributors; graphics by Twitter and contributors.",
+  "changes": "None. Test mutations are made only on disposable copies.",
+  "files": [
+    {
+      "name": "1f600.svg",
+      "url": "https://raw.githubusercontent.com/twitter/twemoji/7a3dad4a4da30497093dab22eafba135f02308e1/assets/svg/1f600.svg",
+      "bytes": 450,
+      "sha256": "41478e547c5b6ad66bfcf91ead5350fa0bc247956c3ff912020327e3e9ad0d2b"
+    },
+    {
+      "name": "1f680.svg",
+      "url": "https://raw.githubusercontent.com/twitter/twemoji/7a3dad4a4da30497093dab22eafba135f02308e1/assets/svg/1f680.svg",
+      "bytes": 677,
+      "sha256": "3892ef66f49ce43d49c8719e9277da0e0e821059f0cc239a549f6629cc12b3cf"
+    },
+    {
+      "name": "1f308.svg",
+      "url": "https://raw.githubusercontent.com/twitter/twemoji/7a3dad4a4da30497093dab22eafba135f02308e1/assets/svg/1f308.svg",
+      "bytes": 733,
+      "sha256": "555858f907bda45e059201a8a3d8910876ef8d830b9b82cfc0ca9aa55c7b029a"
+    },
+    {
+      "name": "1f333.svg",
+      "url": "https://raw.githubusercontent.com/twitter/twemoji/7a3dad4a4da30497093dab22eafba135f02308e1/assets/svg/1f333.svg",
+      "bytes": 862,
+      "sha256": "28b0601f687f84e5fd61d3bd9637d30db7c280967a4518e85bba9f4b24671f57"
+    },
+    {
+      "name": "1f419.svg",
+      "url": "https://raw.githubusercontent.com/twitter/twemoji/7a3dad4a4da30497093dab22eafba135f02308e1/assets/svg/1f419.svg",
+      "bytes": 843,
+      "sha256": "92d125d9c4c2d7e7d8ff450d0fb1cd80c089804fa06663cf1e12ac29ed173c54"
+    },
+    {
+      "name": "1f30d.svg",
+      "url": "https://raw.githubusercontent.com/twitter/twemoji/7a3dad4a4da30497093dab22eafba135f02308e1/assets/svg/1f30d.svg",
+      "bytes": 1156,
+      "sha256": "593d59f9f319875b02111ac46a9f70df2c1e0f3a5fd92810c3f5ddbb598ca62c"
+    },
+    {
+      "name": "1f984.svg",
+      "url": "https://raw.githubusercontent.com/twitter/twemoji/7a3dad4a4da30497093dab22eafba135f02308e1/assets/svg/1f984.svg",
+      "bytes": 2417,
+      "sha256": "6063b1ca7021881784eb5a8110997357026fb7376785e639850335a9c422a639"
+    },
+    {
+      "name": "1f4be.svg",
+      "url": "https://raw.githubusercontent.com/twitter/twemoji/7a3dad4a4da30497093dab22eafba135f02308e1/assets/svg/1f4be.svg",
+      "bytes": 373,
+      "sha256": "7a3a98d89e9998390f1192625541d6528ed7119b96fc14ceb4db88f942f45ead"
+    },
+    {
+      "name": "LICENSE-GRAPHICS",
+      "url": "https://raw.githubusercontent.com/twitter/twemoji/7a3dad4a4da30497093dab22eafba135f02308e1/LICENSE-GRAPHICS",
+      "bytes": 18524,
+      "sha256": "8ae9438818c26e4873b91d8c6ad620526c011e27e125677f13031eda903f007c"
+    }
+  ]
+}
