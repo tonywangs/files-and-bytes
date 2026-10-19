@@ -1,0 +1,8 @@
+.tools/
+.venv/
+node_modules/
+.runtime/
+__pycache__/
+*.pyc
+*.log
+!results/tests.log
