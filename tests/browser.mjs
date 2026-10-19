@@ -1,0 +1,37 @@
+import { chromium } from 'playwright';
+import { spawn } from 'node:child_process';
+import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import http from 'node:http';
+const port=18766,base=`http://127.0.0.1:${port}`;
+const server=spawn('python3',['desk.py','--port',String(port)],{stdio:['ignore','pipe','inherit']});
+const tmp=await mkdtemp(path.join(os.tmpdir(),'desk-browser-'));let browser;
+try {
+ await new Promise((resolve,reject)=>{server.stdout.once('data',resolve);server.once('exit',c=>reject(Error('Server exited '+c)))});
+ assert.equal(await new Promise(resolve=>http.get(base,{headers:{Host:'attacker.invalid'}},r=>{r.resume();resolve(r.statusCode)})),403);
+ assert.equal((await fetch(base+'/scan',{method:'POST',body:'{}'})).status,403);
+ browser=await chromium.launch({headless:true});const page=await browser.newPage({acceptDownloads:true});
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(base);
+ await page.getByRole('button',{name:'Scan real CPython demo'}).click();await page.waitForFunction(()=>document.querySelector('#status').textContent.startsWith('Scan complete'));
+ assert.equal(await page.locator('.card').count(),7);
+ const radio=page.locator('.card input').first();await radio.check();
+ await page.reload();await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('HISTORICAL'));
+ assert.equal(await page.locator('input:checked').count(),1);
+ await page.getByLabel('Filter paths').fill('cjkencodings');assert((await page.locator('.card').count())>0);assert.match(await page.locator('#status').textContent(),/HISTORICAL/);
+ await page.getByLabel('Filter paths').fill('');
+ let download=page.waitForEvent('download');await page.getByRole('button',{name:'Export project JSON'}).click();const json=await download;const jsonPath=path.join(tmp,'review.json');await json.saveAs(jsonPath);
+ const report=JSON.parse(await readFile(jsonPath,'utf8'));assert.equal(report.groups.length,7);assert.equal(Object.keys(report.decisions).length,1);assert.equal(report.provenance.files.length,451);
+ await page.evaluate(()=>localStorage.clear());await page.reload();page.on('dialog',d=>d.accept());await page.locator('#import').setInputFiles(jsonPath);
+ await page.waitForFunction(()=>document.querySelector('#status').textContent.startsWith('Scan complete'));assert.equal(await page.locator('input:checked').count(),1);
+ download=page.waitForEvent('download');await page.getByRole('button',{name:'Export standalone HTML'}).click();const doc=await download;const htmlPath=path.join(tmp,'review.html');await doc.saveAs(htmlPath);
+ const offline=await browser.newPage();await offline.goto('file://'+htmlPath);const exported=await offline.locator('#report').textContent();assert.deepEqual(JSON.parse(exported).decisions,report.decisions);assert.deepEqual(JSON.parse(exported).groups,report.groups);assert.equal(await offline.locator('section').count(),7);assert.match(await offline.locator('body').innerText(),/RETAIN/);
+ await page.screenshot({path:'results/browser-demo.png',fullPage:true});
+ await page.evaluate(()=>{Storage.prototype.setItem=()=>{throw new DOMException('Full','QuotaExceededError')}});
+ await page.locator('.card input').first().check();
+ await page.getByRole('button',{name:'Scan selected folders'}).click();await page.waitForFunction(()=>document.querySelector('#status').textContent.startsWith('Scan complete'));
+ assert.match(await page.locator('#storage').textContent(),/Export JSON/);assert.equal(await page.locator('.card').count(),7);
+ assert.deepEqual(errors,[]);
+ console.log('PASS real scan, 7 groups, inspection/filter, retain preference, reload recovery, JSON export/import with rescan, offline HTML evidence, Host/token guards, no browser errors');
+} finally {await browser?.close();server.kill();await rm(tmp,{recursive:true,force:true})}

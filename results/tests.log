@@ -1,0 +1,5 @@
+
+> test:browser
+> node tests/browser.mjs
+
+PASS real scan, 7 groups, inspection/filter, retain preference, reload recovery, JSON export/import with rescan, offline HTML evidence, Host/token guards, no browser errors
