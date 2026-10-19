@@ -1,0 +1,16 @@
+{
+  "source_commit": "51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf",
+  "entries": 296,
+  "files": 257,
+  "directories": 39,
+  "totals": {
+    "apparent": 4398621,
+    "allocated": 5160960,
+    "allocation_unknown": 0
+  },
+  "entry_and_aggregate_checks": "All entries, both metrics, match independent traversal and GNU du",
+  "disagreements": [],
+  "source_hashes_unchanged": true,
+  "platform": "linux",
+  "du_version": "du (GNU coreutils) 9.4"
+}

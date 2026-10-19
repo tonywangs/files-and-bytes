@@ -1,0 +1,9 @@
+{
+  "workflow": "Real zlib scan, treemap navigation, breadcrumb, filename filter, file inspection, table sorting, allocated view, JSON/HTML download, offline reopening and navigation",
+  "entries": 296,
+  "files": 257,
+  "offline_network_requests": [],
+  "page_errors": [],
+  "browser": "Chromium",
+  "passed": true
+}
