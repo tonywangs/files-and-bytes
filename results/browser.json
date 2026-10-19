@@ -1,0 +1,35 @@
+{
+  "inputRevision": "1b002399e8758fb2bccea4d07312dc9e0f43dcb8",
+  "files": 5,
+  "observations": [
+    "Unauthenticated, foreign-origin, and invalid-Host requests refused",
+    "Real files: literal replacement, prefix, suffix, numbering, extension preservation, manual edit, collision resolution, explicit apply, reload, conflict refusal, and undo",
+    "After controlled process exit during staging, restarted browser honestly showed APPLYING and recovered original names and hashes"
+  ],
+  "originalHashes": {
+    "camera.svg": "f969592e01193efeed652846132585aa38ed6717d3dbc518466c4d811267fe7e",
+    "coffee.svg": "7c0cfa9dceaf1bc3dfcca17cfd4fba18853d981ff2c783d7c54e9da8e98a2b8a",
+    "map.svg": "57776cec294acd035b7ea01b4c222f54360481dee1f58fc12a3ad6da6cbcf0e9",
+    "music.svg": "3c53d3e342c7251d0b5ac3630b799f4ab6461062271072cf070aadcb59ae49c0",
+    "sun.svg": "6c346fdb49a8af368b91a07fb43a8b8d9419af84ca005a06ac075679a9ee2380"
+  },
+  "appliedHashes": {
+    "cover.svg": "f969592e01193efeed652846132585aa38ed6717d3dbc518466c4d811267fe7e",
+    "travel-002-coffee-icon.svg": "7c0cfa9dceaf1bc3dfcca17cfd4fba18853d981ff2c783d7c54e9da8e98a2b8a",
+    "travel-003-map-icon.svg": "57776cec294acd035b7ea01b4c222f54360481dee1f58fc12a3ad6da6cbcf0e9",
+    "travel-004-music-icon.svg": "3c53d3e342c7251d0b5ac3630b799f4ab6461062271072cf070aadcb59ae49c0",
+    "travel-005-sun-icon.svg": "6c346fdb49a8af368b91a07fb43a8b8d9419af84ca005a06ac075679a9ee2380"
+  },
+  "recoveredHashes": {
+    "camera.svg": "f969592e01193efeed652846132585aa38ed6717d3dbc518466c4d811267fe7e",
+    "coffee.svg": "7c0cfa9dceaf1bc3dfcca17cfd4fba18853d981ff2c783d7c54e9da8e98a2b8a",
+    "map.svg": "57776cec294acd035b7ea01b4c222f54360481dee1f58fc12a3ad6da6cbcf0e9",
+    "music.svg": "3c53d3e342c7251d0b5ac3630b799f4ab6461062271072cf070aadcb59ae49c0",
+    "sun.svg": "6c346fdb49a8af368b91a07fb43a8b8d9419af84ca005a06ac075679a9ee2380"
+  },
+  "browserVersion": "156.0.8078.4",
+  "limitations": [
+    "Controlled process exits, not power failure testing",
+    "Linux local filesystem and headless Chromium only"
+  ]
+}

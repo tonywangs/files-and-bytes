@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Batch Rename Desk</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body><main>
+<header><div><span class="eyebrow">LOCAL FILE WORKSPACE</span><h1>Batch Rename Desk<span class="dot">.</span></h1><p>Make the names fit. Keep the files intact.</p></div><span class="badge">Loopback only · Linux</span></header>
+<section class="folder"><div><span class="eyebrow">SELECTED FOLDER</span><code id="folder">Connecting…</code><p id="count"></p></div><button id="refresh" class="secondary">Refresh folder</button></section>
+<div class="layout"><section class="panel rules"><h2><span>01</span> Shape the names</h2><p class="muted">Rules run in order: replacement, numbering, then prefix and suffix.</p>
+<label>Find literal text<input id="find" placeholder="e.g. camera"></label><label>Replace with<input id="replace" placeholder="e.g. photo"></label>
+<div class="pair"><label>Prefix<input id="prefix" placeholder="collection-"></label><label>Suffix<input id="suffix" placeholder="-final"></label></div>
+<label class="check"><input id="preserve_extension" type="checkbox" checked> Keep the final extension unchanged</label><p class="hint">With this off, rules affect the whole filename. Manual edits always include the extension.</p>
+<label class="check"><input id="number" type="checkbox"> Add deterministic numbering</label><div class="pair"><label>Start<input id="start" type="number" min="0" max="999999" value="1"></label><label>Digits<input id="width" type="number" min="1" max="8" value="3"></label></div><p class="hint">Original names are sorted by Unicode code point.</p>
+<button id="generate">Generate preview</button></section>
+<section class="panel preview"><h2><span>02</span> Inspect the plan</h2><p class="muted">Edit any proposed name, then validate the exact plan you want to apply.</p><div class="table-wrap"><table><thead><tr><th>Current filename</th><th>Proposed filename · editable</th></tr></thead><tbody id="rows"></tbody></table></div>
+<div id="message" role="status" aria-live="polite">Loading files…</div><div class="actions"><button id="validate" class="secondary" disabled>Validate edited preview</button><button id="apply" disabled>Apply displayed plan</button></div><p class="hint">Apply changes filenames on disk. No file contents are rewritten.</p></section></div>
+<section class="panel history"><h2><span>03</span> Recover & undo</h2><p class="muted">The journal survives a restart. Undo checks every file and refuses occupied original names. Undo the current operation before starting another.</p><div id="history"></div></section>
+<details id="skipped"><summary>Unsupported items</summary><ul></ul></details>
+<footer>Keep this folder idle while renaming. Symlinks, hard links, subfolders, and files over 64 MiB are excluded. <br>Case and Unicode aliases are treated as collisions. Keep the <code>.rename-desk</code> folder for recovery.</footer>
+</main></body></html>
