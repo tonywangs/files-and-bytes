@@ -1,0 +1,24 @@
+const {chromium}=require('playwright');
+const assert=require('node:assert/strict');const fs=require('node:fs');const {execFileSync}=require('node:child_process');
+(async()=>{
+ const browser=await chromium.launch({headless:true});const page=await browser.newPage({acceptDownloads:true});
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto(process.env.DESK_URL||'http://127.0.0.1:18765');await page.locator('#demo').click();await page.locator('article').nth(2).waitFor();
+ assert.equal(await page.locator('article').count(),3);assert.match(await page.locator('article').first().innerText(),/DECODING ERROR/);
+ await page.locator('article').nth(2).locator('.previews select').first().selectOption('koi8-r');assert.match(await page.locator('article').nth(2).locator('.previews pre').first().innerText(),/Файл/);
+ const sources=JSON.parse(fs.readFileSync('demo/sources.json')).filter(r=>r.codec);
+ for(let i=0;i<3;i++)await page.locator('article').nth(i).locator('select').first().selectOption(sources[i].codec);
+ await page.locator('article').first().locator('input[type=number]').fill('64');await page.locator('article').first().locator('input[type=number]').dispatchEvent('change');await page.waitForFunction(()=>document.querySelector('article').lastElementChild.textContent.startsWith('00000040'));
+ let d=page.waitForEvent('download');await page.locator('#save').click();await(await d).saveAs('/tmp/encoding-decisions.json');
+ await page.reload();assert.match(await page.locator('article').first().innerText(),/Reconnect matching/);
+ await page.locator('#export').click();assert.match(await page.locator('#status').innerText(),/matching original/);
+ await page.locator('#files').setInputFiles({name:sources[0].name,mimeType:'application/octet-stream',buffer:Buffer.from('wrong bytes')});
+ assert.equal(await page.locator('article').first().locator('select').first().inputValue(),sources[0].codec);
+ assert.match(await page.locator('article').first().innerText(),/Reconnect matching/);
+ await page.locator('#clear').click();await page.locator('#project').setInputFiles('/tmp/encoding-decisions.json');await page.locator('article').nth(2).waitFor();
+ await page.locator('#files').setInputFiles(sources.map(r=>'demo/'+r.name));await page.waitForFunction(()=>Array.from(document.querySelectorAll('article')).every(a=>a.textContent.includes('Original connected')));
+ d=page.waitForEvent('download');await page.locator('#export').click();await(await d).saveAs('/tmp/encoding-browser-export.zip');
+ execFileSync('python3',['scripts/verify_export.py','/tmp/encoding-browser-export.zip'],{stdio:'inherit'});
+ await page.evaluate(()=>{const r=JSON.parse(localStorage.getItem('desk'))[0];localStorage.setItem('desk',JSON.stringify(Array.from({length:32},(_,i)=>({...r,name:'saved'+i}))));});await page.reload();await page.locator('#demo').click();await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('Rejected'));assert.match(await page.locator('#status').innerText(),/maximum 32 files/);assert.equal(await page.locator('article').count(),32);
+ await page.screenshot({path:'/tmp/encoding-desk.png',fullPage:true});assert.deepEqual(errors,[]);await browser.close();console.log('PASS browser real import / compare / decision / byte inspection / reload / hash mismatch / project recovery / export');
+})().catch(e=>{console.error(e);process.exit(1)});
