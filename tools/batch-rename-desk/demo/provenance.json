@@ -1,0 +1,38 @@
+{
+  "project": "Feather icons",
+  "repository": "https://github.com/feathericons/feather",
+  "revision": "1b002399e8758fb2bccea4d07312dc9e0f43dcb8",
+  "license": "MIT",
+  "files": [
+    {
+      "file": "LICENSE",
+      "url": "https://raw.githubusercontent.com/feathericons/feather/1b002399e8758fb2bccea4d07312dc9e0f43dcb8/LICENSE",
+      "sha256": "308028e93fcf84972523cdf6e616f73168546b4953895f516d01287f16fe7bee"
+    },
+    {
+      "file": "camera.svg",
+      "url": "https://raw.githubusercontent.com/feathericons/feather/1b002399e8758fb2bccea4d07312dc9e0f43dcb8/icons/camera.svg",
+      "sha256": "f969592e01193efeed652846132585aa38ed6717d3dbc518466c4d811267fe7e"
+    },
+    {
+      "file": "coffee.svg",
+      "url": "https://raw.githubusercontent.com/feathericons/feather/1b002399e8758fb2bccea4d07312dc9e0f43dcb8/icons/coffee.svg",
+      "sha256": "7c0cfa9dceaf1bc3dfcca17cfd4fba18853d981ff2c783d7c54e9da8e98a2b8a"
+    },
+    {
+      "file": "map.svg",
+      "url": "https://raw.githubusercontent.com/feathericons/feather/1b002399e8758fb2bccea4d07312dc9e0f43dcb8/icons/map.svg",
+      "sha256": "57776cec294acd035b7ea01b4c222f54360481dee1f58fc12a3ad6da6cbcf0e9"
+    },
+    {
+      "file": "music.svg",
+      "url": "https://raw.githubusercontent.com/feathericons/feather/1b002399e8758fb2bccea4d07312dc9e0f43dcb8/icons/music.svg",
+      "sha256": "3c53d3e342c7251d0b5ac3630b799f4ab6461062271072cf070aadcb59ae49c0"
+    },
+    {
+      "file": "sun.svg",
+      "url": "https://raw.githubusercontent.com/feathericons/feather/1b002399e8758fb2bccea4d07312dc9e0f43dcb8/icons/sun.svg",
+      "sha256": "6c346fdb49a8af368b91a07fb43a8b8d9419af84ca005a06ac075679a9ee2380"
+    }
+  ]
+}
