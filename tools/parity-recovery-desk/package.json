@@ -1,0 +1,1 @@
+{"name":"parity-recovery-desk","private":true,"version":"0.1.0","scripts":{"test:browser":"node tests/browser.mjs"},"devDependencies":{"playwright":"1.55.1"}}
