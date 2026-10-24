@@ -1,0 +1,22 @@
+{
+  "clean.zip": {
+    "status": "identical",
+    "oracle": "external unzip/tar bytes compared directly",
+    "file_count": 7
+  },
+  "clean.tar": {
+    "status": "identical",
+    "oracle": "external unzip/tar bytes compared directly",
+    "file_count": 7
+  },
+  "changed.zip": {
+    "status": "different",
+    "oracle": "external unzip/tar bytes compared directly",
+    "file_count": 7
+  },
+  "changed.tar": {
+    "status": "different",
+    "oracle": "external unzip/tar bytes compared directly",
+    "file_count": 7
+  }
+}

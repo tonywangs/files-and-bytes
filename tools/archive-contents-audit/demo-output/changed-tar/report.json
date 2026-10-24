@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "source": "/var/lib/dailybuilder/projects/archive-contents-audit/fixtures/zlib",
+  "archive": "/var/lib/dailybuilder/projects/archive-contents-audit/demo-output/changed.tar",
+  "prefix": "backup",
+  "status": "different",
+  "complete": true,
+  "source_entries": [
+    {
+      "path": "zlib.h",
+      "status": "hashed",
+      "type": "file",
+      "size": 96829,
+      "sha256": "8a5579af72ea4f427ff00a4150f0ccb3fc5c1e4379f726e101133b1ab9fc600c"
+    },
+    {
+      "path": "README",
+      "status": "hashed",
+      "type": "file",
+      "size": 5317,
+      "sha256": "d106dcdb2a0b3087cb3a2380b9f00a0bbadc7eb835cd80408f94a2d78d69727d"
+    },
+    {
+      "path": "zconf.h",
+      "status": "hashed",
+      "type": "file",
+      "size": 16500,
+      "sha256": "f5134250a67d57459234b63858f0d9d3ef8dcc48e9e1028d3f4fdcf6eae677ae"
+    },
+    {
+      "path": "LICENSE",
+      "status": "hashed",
+      "type": "file",
+      "size": 1002,
+      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+    },
+    {
+      "path": "test",
+      "status": "directory",
+      "type": "directory"
+    },
+    {
+      "path": "test/example.c",
+      "status": "hashed",
+      "type": "file",
+      "size": 15547,
+      "sha256": "b7aeca68f7585e29ca6572542e0ecbd9c3c9370035ae15152008b3efbd4f84ac"
+    },
+    {
+      "path": "test/infcover.c",
+      "status": "hashed",
+      "type": "file",
+      "size": 24724,
+      "sha256": "13a0d18d8bca440c4617d88c2236913f53eedebc50e469be472edd4280c697e5"
+    },
+    {
+      "path": "test/minigzip.c",
+      "status": "hashed",
+      "type": "file",
+      "size": 14874,
+      "sha256": "57e4a1b9bb1bdb59ac9e5ac1dc9132183e8740cec2f6b5c5f2476aac08a2375f"
+    }
+  ],
+  "archive_entries": [
+    {
+      "index": 0,
+      "name": "backup",
+      "size": 0,
+      "type": "directory",
+      "status": "directory",
+      "path": ""
+    },
+    {
+      "index": 1,
+      "name": "backup/zlib.h",
+      "size": 22,
+      "type": "file",
+      "status": "hashed",
+      "path": "zlib.h",
+      "sha256": "d2ccb75d98105b86fa695deeacfbbe7bec0fb67e2c4cac1fe9f1e8e263bd630a"
+    },
+    {
+      "index": 2,
+      "name": "backup/extra.txt",
+      "size": 20,
+      "type": "file",
+      "status": "hashed",
+      "path": "extra.txt",
+      "sha256": "8babc92a87cf7fcc3252d8c356fcddb275491a28f50a7750b99ae6caa231ee91"
+    },
+    {
+      "index": 3,
+      "name": "backup/zconf.h",
+      "size": 16500,
+      "type": "file",
+      "status": "hashed",
+      "path": "zconf.h",
+      "sha256": "f5134250a67d57459234b63858f0d9d3ef8dcc48e9e1028d3f4fdcf6eae677ae"
+    },
+    {
+      "index": 4,
+      "name": "backup/LICENSE",
+      "size": 1002,
+      "type": "file",
+      "status": "hashed",
+      "path": "LICENSE",
+      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+    },
+    {
+      "index": 5,
+      "name": "backup/test",
+      "size": 0,
+      "type": "directory",
+      "status": "directory",
+      "path": "test"
+    },
+    {
+      "index": 6,
+      "name": "backup/test/example.c",
+      "size": 15547,
+      "type": "file",
+      "status": "hashed",
+      "path": "test/example.c",
+      "sha256": "b7aeca68f7585e29ca6572542e0ecbd9c3c9370035ae15152008b3efbd4f84ac"
+    },
+    {
+      "index": 7,
+      "name": "backup/test/infcover.c",
+      "size": 24724,
+      "type": "file",
+      "status": "hashed",
+      "path": "test/infcover.c",
+      "sha256": "13a0d18d8bca440c4617d88c2236913f53eedebc50e469be472edd4280c697e5"
+    },
+    {
+      "index": 8,
+      "name": "backup/test/minigzip.c",
+      "size": 14874,
+      "type": "file",
+      "status": "hashed",
+      "path": "test/minigzip.c",
+      "sha256": "57e4a1b9bb1bdb59ac9e5ac1dc9132183e8740cec2f6b5c5f2476aac08a2375f"
+    }
+  ],
+  "comparisons": [
+    {
+      "path": "LICENSE",
+      "status": "match"
+    },
+    {
+      "path": "README",
+      "status": "missing"
+    },
+    {
+      "path": "extra.txt",
+      "status": "extra"
+    },
+    {
+      "path": "test/example.c",
+      "status": "match"
+    },
+    {
+      "path": "test/infcover.c",
+      "status": "match"
+    },
+    {
+      "path": "test/minigzip.c",
+      "status": "match"
+    },
+    {
+      "path": "zconf.h",
+      "status": "match"
+    },
+    {
+      "path": "zlib.h",
+      "status": "changed"
+    }
+  ],
+  "errors": [],
+  "limits": {
+    "max_entries": 10000,
+    "max_file": 67108864,
+    "max_total": 536870912,
+    "max_archive": 67108864
+  }
+}
