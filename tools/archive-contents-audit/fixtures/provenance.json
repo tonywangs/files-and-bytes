@@ -1,0 +1,44 @@
+{
+  "project": "zlib 1.3.1",
+  "url": "https://zlib.net/fossils/zlib-1.3.1.tar.gz",
+  "archive_sha256": "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23",
+  "selection": "All regular files under test/, plus LICENSE, README, zlib.h and zconf.h; bytes unchanged",
+  "license": "zlib; see zlib/LICENSE",
+  "files": [
+    {
+      "path": "LICENSE",
+      "size": 1002,
+      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+    },
+    {
+      "path": "test/infcover.c",
+      "size": 24724,
+      "sha256": "13a0d18d8bca440c4617d88c2236913f53eedebc50e469be472edd4280c697e5"
+    },
+    {
+      "path": "test/example.c",
+      "size": 15547,
+      "sha256": "b7aeca68f7585e29ca6572542e0ecbd9c3c9370035ae15152008b3efbd4f84ac"
+    },
+    {
+      "path": "test/minigzip.c",
+      "size": 14874,
+      "sha256": "57e4a1b9bb1bdb59ac9e5ac1dc9132183e8740cec2f6b5c5f2476aac08a2375f"
+    },
+    {
+      "path": "README",
+      "size": 5317,
+      "sha256": "d106dcdb2a0b3087cb3a2380b9f00a0bbadc7eb835cd80408f94a2d78d69727d"
+    },
+    {
+      "path": "zlib.h",
+      "size": 96829,
+      "sha256": "8a5579af72ea4f427ff00a4150f0ccb3fc5c1e4379f726e101133b1ab9fc600c"
+    },
+    {
+      "path": "zconf.h",
+      "size": 16500,
+      "sha256": "f5134250a67d57459234b63858f0d9d3ef8dcc48e9e1028d3f4fdcf6eae677ae"
+    }
+  ]
+}
